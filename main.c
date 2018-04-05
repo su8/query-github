@@ -23,8 +23,6 @@
 
 #include <curl/curl.h>
 
-#define GITHUB_TOKEN "empty"
-
 static size_t read_github_data_cb(char *, size_t, size_t, char *);
 
 static size_t
@@ -63,7 +61,7 @@ int main(void) {
     goto error;
   }
 
-  curl_easy_setopt(curl, CURLOPT_URL, da_url);
+  curl_easy_setopt(curl, CURLOPT_URL, github_url);
   curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "gzip");
   curl_easy_setopt(curl, CURLOPT_USERAGENT, "query-github/1.0");
   curl_easy_setopt(curl, CURLOPT_USE_SSL, (long)CURLUSESSL_ALL); 

@@ -5,7 +5,7 @@ PACKAGE=github
 PROG=main.c
 
 all:
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(PACKAGE) $(PROG)
+	$(CC) -DGITHUB_TOKEN=\"'$(TOKEN)'\" $(CFLAGS) $(LDFLAGS) -o $(PACKAGE) $(PROG)
 
 install: 
 	install -D -s -m 755 $(PACKAGE) /usr/bin/$(PACKAGE)
